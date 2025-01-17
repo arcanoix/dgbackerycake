@@ -1,4 +1,6 @@
-# Astro Starter Kit: Basics
+# Site public DGbackery&Cake
+
+
 
 ```sh
 npm create astro@latest -- --template basics
