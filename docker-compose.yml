@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+      context: .
+    container_name: dgbackerycakesite
+    ports:
+      - "4321:4321"
+    volumes:
+     - .:/app
+     - /app/node_modules
+    restart: unless-stopped
+    command: npm run dev -- --host
+
+
+
