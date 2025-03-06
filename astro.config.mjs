@@ -8,4 +8,7 @@ export default defineConfig({
             watch: { usePolling: true }
         },
     },
+    image: {
+        service: { entrypoint: 'astro/assets/services/sharp' }
+    }
 });
