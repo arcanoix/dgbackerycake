@@ -1,11 +1,191 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProductCard from '../components/ProductCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import { Image } from 'astro:assets';
+import dgLogo from '../assets/image/dg-logo.jpg';
 ---
 
 <Layout>
-	<Welcome />
+	<Header />
+	
+	<main>
+		<!-- Hero Section con gradiente vibrante -->
+		<section class="relative bg-gradient-to-br from-primary-50 via-secondary-50 to-orange-50 py-20 lg:py-32 overflow-hidden">
+			<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZWNhY2EiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNC00IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptMTAgMTBjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
+			
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+				<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+					<div class="text-center lg:text-left space-y-8">
+						<h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-gray-900 leading-tight">
+						Endulzamos tus 
+						<span class="bg-gradient-to-r from-secondary via-primary to-orange-400 bg-clip-text text-transparent">
+							momentos especiales
+						</span>
+					</h1>
+						<p class="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-2xl">
+							Repostería artesanal hecha con amor, dedicación y los mejores ingredientes. 
+							Tortas personalizadas, pan fresco y postres que harán de tu celebración algo inolvidable.
+						</p>
+						<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+							<a href="/productos" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-secondary to-primary rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+								Ver Productos
+							</a>
+							<a href="https://wa.me/584128477968" target="_blank" rel="noopener noreferrer" 
+							   class="inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-semibold text-secondary bg-white border-2 border-secondary rounded-2xl shadow-lg hover:bg-secondary hover:text-white transform hover:-translate-y-1 transition-all duration-300">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+								</svg>
+								Hacer Pedido
+							</a>
+						</div>
+					</div>
+					<div class="flex justify-center lg:justify-end">
+						<div class="relative">
+							<div class="absolute -inset-4 bg-gradient-to-r from-secondary via-primary to-orange-400 rounded-full blur-2xl opacity-30 animate-pulse-slow"></div>
+							<Image 
+								src={dgLogo} 
+								alt="DGBACKERY&CAKE - Repostería Artesanal" 
+								width={500}
+								height={500}
+								loading="eager"
+								fetchpriority="high"
+								class="relative rounded-full shadow-2xl animate-float ring-8 ring-white"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features Section con cards vibrantes -->
+		<section class="py-20 bg-white">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+					<div class="group p-8 bg-gradient-to-br from-secondary-50 to-primary-50 rounded-3xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-transparent hover:border-secondary-200">
+						<div class="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🎂</div>
+						<h3 class="text-2xl font-display font-bold text-gray-900 mb-3">Tortas Personalizadas</h3>
+						<p class="text-gray-600 leading-relaxed">Diseños únicos adaptados a tu celebración especial</p>
+					</div>
+					<div class="group p-8 bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-transparent hover:border-orange-200">
+						<div class="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🍞</div>
+						<h3 class="text-2xl font-display font-bold text-gray-900 mb-3">Pan Artesanal</h3>
+						<p class="text-gray-600 leading-relaxed">Fresco todos los días, hecho con ingredientes naturales</p>
+					</div>
+					<div class="group p-8 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-transparent hover:border-yellow-200">
+						<div class="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">⭐</div>
+						<h3 class="text-2xl font-display font-bold text-gray-900 mb-3">Calidad Premium</h3>
+						<p class="text-gray-600 leading-relaxed">Solo usamos los mejores ingredientes en cada receta</p>
+					</div>
+					<div class="group p-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-transparent hover:border-green-200">
+						<div class="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🚚</div>
+						<h3 class="text-2xl font-display font-bold text-gray-900 mb-3">Entrega a Domicilio</h3>
+						<p class="text-gray-600 leading-relaxed">Llevamos tus pedidos frescos hasta tu puerta</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Products Preview con gradiente de fondo -->
+		<section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl sm:text-5xl font-display font-bold text-gray-900 mb-4">
+						Nuestros Productos <span class="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Destacados</span>
+					</h2>
+					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+						Descubre nuestras creaciones más populares
+					</p>
+				</div>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+					<ProductCard 
+						title="Torta de Chocolate"
+						description="Deliciosa torta de chocolate con relleno de ganache y cobertura de crema de mantequilla"
+						image={dgLogo}
+						price="Desde $25"
+						category="Tortas"
+					/>
+					<ProductCard 
+						title="Pan Artesanal"
+						description="Pan fresco horneado diariamente con masa madre y ingredientes naturales"
+						image={dgLogo}
+						price="$3/unidad"
+						category="Pan"
+					/>
+					<ProductCard 
+						title="Cupcakes Personalizados"
+						description="Cupcakes decorados especialmente para tu evento, disponibles en múltiples sabores"
+						image={dgLogo}
+						price="$2/unidad"
+						category="Postres"
+					/>
+				</div>
+				<div class="text-center">
+					<a href="/productos" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-secondary to-primary rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+						Ver Todos los Productos
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Testimonials con cards coloridas -->
+		<section class="py-20 bg-white">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl sm:text-5xl font-display font-bold text-gray-900 mb-4">
+						Lo que dicen nuestros <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">clientes</span>
+					</h2>
+					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+						Testimonios reales de personas que han disfrutado nuestros productos
+					</p>
+				</div>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<TestimonialCard 
+						name="María González"
+						text="La torta de cumpleaños que pedí superó todas mis expectativas. Deliciosa y hermosa. ¡Todos quedaron encantados!"
+						rating={5}
+					/>
+					<TestimonialCard 
+						name="Carlos Rodríguez"
+						text="El pan artesanal es increíble, fresco y con un sabor único. Ahora es parte de mi desayuno diario."
+						rating={5}
+					/>
+					<TestimonialCard 
+						name="Ana Martínez"
+						text="Excelente servicio y atención. Los cupcakes para mi boda fueron perfectos. Altamente recomendado."
+						rating={5}
+					/>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section con gradiente vibrante -->
+		<section class="relative py-24 bg-gradient-to-r from-secondary via-primary to-orange-400 overflow-hidden">
+			<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptMC0xMGMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAxLjc5IDQgNCA0IDQtMS43OSA0LTR6bTEwIDEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptMC0xMGMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAxLjc5IDQgNCA0IDQtMS43OSA0LTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-100"></div>
+			
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+				<div class="max-w-4xl mx-auto text-center text-white space-y-8">
+					<h2 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold">
+						¿Listo para hacer tu pedido?
+					</h2>
+					<p class="text-xl sm:text-2xl text-white/90 leading-relaxed">
+						Contáctanos por WhatsApp y cuéntanos qué necesitas. Estamos aquí para hacer realidad tus ideas.
+					</p>
+					<a href="https://wa.me/584128477968" target="_blank" rel="noopener noreferrer" 
+					   class="inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold text-red-600 bg-white rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+						</svg>
+						Contactar Ahora
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	
+	<Footer />
+	<WhatsAppFloat />
 </Layout>

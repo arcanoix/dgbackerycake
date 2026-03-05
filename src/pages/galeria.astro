@@ -1,0 +1,459 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import { Image } from 'astro:assets';
+import dgLogo from '../assets/image/dg-logo.jpg';
+---
+
+<Layout 
+	title="Galería - DGBACKERY&CAKE"
+	description="Explora nuestra galería de creaciones. Tortas, panes y postres que hemos elaborado con amor para nuestros clientes."
+>
+	<Header />
+	
+	<main>
+		<section class="page-hero">
+			<div class="container">
+				<h1 class="page-title">Galería de Creaciones</h1>
+				<p class="page-description">
+					Cada producto es una obra de arte hecha con dedicación. 
+					Descubre algunas de nuestras creaciones más especiales.
+				</p>
+			</div>
+		</section>
+
+		<section class="gallery-section">
+			<div class="container">
+				<div class="gallery-filters">
+					<button class="filter-btn active" data-filter="all">Todos</button>
+					<button class="filter-btn" data-filter="tortas">Tortas</button>
+					<button class="filter-btn" data-filter="pan">Pan</button>
+					<button class="filter-btn" data-filter="pasteles">Pasteles</button>
+					<button class="filter-btn" data-filter="postres">Postres</button>
+				</div>
+
+				<div class="gallery-grid">
+					<div class="gallery-item" data-category="tortas">
+						<Image 
+							src={dgLogo} 
+							alt="Torta de Chocolate Premium"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Torta de Chocolate Premium</h3>
+							<p>Cumpleaños especial</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="tortas">
+						<Image 
+							src={dgLogo} 
+							alt="Torta Red Velvet"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Torta Red Velvet</h3>
+							<p>Aniversario</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="pan">
+						<Image 
+							src={dgLogo} 
+							alt="Pan Artesanal Variado"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Pan Artesanal</h3>
+							<p>Horneado diario</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="pasteles">
+						<Image 
+							src={dgLogo} 
+							alt="Cupcakes Gourmet"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Cupcakes Gourmet</h3>
+							<p>Baby shower</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="tortas">
+						<Image 
+							src={dgLogo} 
+							alt="Torta Temática Infantil"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Torta Temática</h3>
+							<p>Cumpleaños infantil</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="postres">
+						<Image 
+							src={dgLogo} 
+							alt="Macarons Franceses"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Macarons Franceses</h3>
+							<p>Mesa de postres</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="pan">
+						<Image 
+							src={dgLogo} 
+							alt="Baguette Francesa"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Baguette Francesa</h3>
+							<p>Pan fresco</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="postres">
+						<Image 
+							src={dgLogo} 
+							alt="Tiramisú"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Tiramisú Clásico</h3>
+							<p>Postre especial</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="tortas">
+						<Image 
+							src={dgLogo} 
+							alt="Torta de Vainilla"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Torta de Vainilla</h3>
+							<p>Boda elegante</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="pasteles">
+						<Image 
+							src={dgLogo} 
+							alt="Brownies Premium"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Brownies Premium</h3>
+							<p>Evento corporativo</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="pan">
+						<Image 
+							src={dgLogo} 
+							alt="Focaccia Italiana"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Focaccia</h3>
+							<p>Pan especial</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="postres">
+						<Image 
+							src={dgLogo} 
+							alt="Pie de Limón"
+							width={400}
+							height={400}
+							loading="lazy"
+							class="gallery-image"
+						/>
+						<div class="gallery-overlay">
+							<h3>Pie de Limón</h3>
+							<p>Postre refrescante</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="cta-section">
+			<div class="container">
+				<div class="cta-content">
+					<h2 class="cta-title">¿Te inspiraste?</h2>
+					<p class="cta-description">
+						Estas son solo algunas de nuestras creaciones. 
+						Podemos hacer realidad tu idea perfecta.
+					</p>
+					<a href="https://wa.me/584128477968" target="_blank" rel="noopener noreferrer" class="btn btn-white">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+						</svg>
+						Hacer tu Pedido
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	
+	<Footer />
+	<WhatsAppFloat />
+</Layout>
+
+<style>
+	.page-hero {
+		background: linear-gradient(135deg, #fef3f4 0%, #fff5f7 100%);
+		padding: 5rem 2rem 3rem;
+		text-align: center;
+	}
+	
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	
+	.page-title {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		color: var(--color-text);
+	}
+	
+	.page-description {
+		font-size: 1.25rem;
+		color: var(--color-text-light);
+		max-width: 700px;
+		margin: 0 auto;
+		line-height: 1.8;
+	}
+	
+	.gallery-section {
+		padding: 4rem 2rem;
+	}
+	
+	.gallery-filters {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		margin-bottom: 3rem;
+		flex-wrap: wrap;
+	}
+	
+	.filter-btn {
+		padding: 0.75rem 1.5rem;
+		background: white;
+		border: 2px solid var(--color-border);
+		border-radius: var(--radius-md);
+		font-weight: 600;
+		color: var(--color-text-light);
+		transition: var(--transition);
+		cursor: pointer;
+	}
+	
+	.filter-btn:hover,
+	.filter-btn.active {
+		background: var(--color-primary);
+		color: white;
+		border-color: var(--color-primary);
+	}
+	
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	
+	.gallery-item {
+		position: relative;
+		overflow: hidden;
+		border-radius: var(--radius-lg);
+		aspect-ratio: 1;
+		cursor: pointer;
+		box-shadow: var(--shadow-md);
+		transition: var(--transition);
+	}
+	
+	.gallery-item:hover {
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-xl);
+	}
+	
+	.gallery-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease;
+	}
+	
+	.gallery-item:hover .gallery-image {
+		transform: scale(1.1);
+	}
+	
+	.gallery-overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+		padding: 2rem 1.5rem 1.5rem;
+		color: white;
+		transform: translateY(100%);
+		transition: transform 0.3s ease;
+	}
+	
+	.gallery-item:hover .gallery-overlay {
+		transform: translateY(0);
+	}
+	
+	.gallery-overlay h3 {
+		font-size: 1.25rem;
+		margin-bottom: 0.5rem;
+	}
+	
+	.gallery-overlay p {
+		font-size: 0.95rem;
+		opacity: 0.9;
+	}
+	
+	.gallery-item.hidden {
+		display: none;
+	}
+	
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+		color: white;
+		padding: 5rem 2rem;
+		text-align: center;
+	}
+	
+	.cta-content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	
+	.cta-title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	.cta-description {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		opacity: 0.95;
+		line-height: 1.6;
+	}
+	
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 1rem 2rem;
+		border-radius: var(--radius-md);
+		font-weight: 600;
+		font-size: 1rem;
+		transition: var(--transition);
+		cursor: pointer;
+		border: none;
+	}
+	
+	.btn-white {
+		background: white;
+		color: var(--color-primary);
+		box-shadow: var(--shadow-lg);
+	}
+	
+	.btn-white:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-xl);
+	}
+	
+	@media (max-width: 768px) {
+		.page-hero {
+			padding: 3rem 1rem 2rem;
+		}
+		
+		.page-title {
+			font-size: 2rem;
+		}
+		
+		.page-description {
+			font-size: 1rem;
+		}
+		
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.cta-title {
+			font-size: 1.75rem;
+		}
+		
+		.cta-description {
+			font-size: 1rem;
+		}
+	}
+</style>
+
+<script>
+	const filterButtons = document.querySelectorAll('.filter-btn') as NodeListOf<HTMLElement>;
+	const galleryItems = document.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;
+
+	filterButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			const filter = button.getAttribute('data-filter');
+			
+			filterButtons.forEach(btn => btn.classList.remove('active'));
+			button.classList.add('active');
+			
+			galleryItems.forEach(item => {
+				const category = item.getAttribute('data-category');
+				
+				if (filter === 'all' || category === filter) {
+					item.classList.remove('hidden');
+				} else {
+					item.classList.add('hidden');
+				}
+			});
+		});
+	});
+</script>

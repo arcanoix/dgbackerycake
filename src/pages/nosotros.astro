@@ -1,0 +1,460 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import { Image } from 'astro:assets';
+import dgLogo from '../assets/image/dg-logo.jpg';
+---
+
+<Layout 
+	title="Sobre Nosotros - DGBACKERY&CAKE"
+	description="Conoce la historia detrás de DGBACKERY&CAKE. Pasión por la repostería artesanal y compromiso con la calidad desde el primer día."
+>
+	<Header />
+	
+	<main>
+		<section class="page-hero">
+			<div class="container">
+				<h1 class="page-title">Nuestra Historia</h1>
+				<p class="page-description">
+					Más que una repostería, somos una familia que comparte la pasión por crear momentos dulces e inolvidables.
+				</p>
+			</div>
+		</section>
+
+		<section class="story-section">
+			<div class="container">
+				<div class="story-content">
+					<div class="story-image">
+						<Image 
+							src={dgLogo} 
+							alt="DGBACKERY&CAKE"
+							width={600}
+							height={600}
+							loading="eager"
+							class="about-image"
+						/>
+					</div>
+					<div class="story-text">
+						<h2 class="section-title">¿Quiénes Somos?</h2>
+						<p>
+							DGBACKERY&CAKE nació del amor por la repostería y el deseo de compartir momentos especiales 
+							con cada cliente. Lo que comenzó como un sueño en una pequeña cocina, hoy se ha convertido 
+							en un emprendimiento que endulza la vida de muchas familias.
+						</p>
+						<p>
+							Cada producto que elaboramos lleva nuestra dedicación, pasión y el compromiso de usar 
+							solo los mejores ingredientes. Creemos que la repostería es un arte que conecta corazones 
+							y crea recuerdos inolvidables.
+						</p>
+						<p>
+							Desde tortas personalizadas para celebraciones especiales hasta pan fresco para el desayuno 
+							diario, ponemos el mismo amor y cuidado en cada creación. Tu satisfacción es nuestra 
+							mayor recompensa.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="values-section">
+			<div class="container">
+				<h2 class="section-title centered">Nuestros Valores</h2>
+				<div class="values-grid">
+					<div class="value-card">
+						<div class="value-icon">❤️</div>
+						<h3>Pasión</h3>
+						<p>Amamos lo que hacemos y se nota en cada detalle de nuestros productos.</p>
+					</div>
+					<div class="value-card">
+						<div class="value-icon">⭐</div>
+						<h3>Calidad</h3>
+						<p>Solo utilizamos ingredientes premium para garantizar el mejor sabor y frescura.</p>
+					</div>
+					<div class="value-card">
+						<div class="value-icon">🎨</div>
+						<h3>Creatividad</h3>
+						<p>Cada pedido es único. Trabajamos contigo para crear diseños personalizados.</p>
+					</div>
+					<div class="value-card">
+						<div class="value-icon">🤝</div>
+						<h3>Compromiso</h3>
+						<p>Tu satisfacción es nuestra prioridad. Nos esforzamos por superar tus expectativas.</p>
+					</div>
+					<div class="value-card">
+						<div class="value-icon">🌱</div>
+						<h3>Frescura</h3>
+						<p>Elaboramos todo diariamente para garantizar productos frescos y deliciosos.</p>
+					</div>
+					<div class="value-card">
+						<div class="value-icon">💚</div>
+						<h3>Familia</h3>
+						<p>Tratamos a cada cliente como parte de nuestra familia extendida.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="mission-section">
+			<div class="container">
+				<div class="mission-grid">
+					<div class="mission-card">
+						<h3>🎯 Nuestra Misión</h3>
+						<p>
+							Crear productos de repostería artesanal de la más alta calidad, 
+							elaborados con amor y dedicación, para hacer de cada celebración 
+							un momento especial e inolvidable.
+						</p>
+					</div>
+					<div class="mission-card">
+						<h3>🌟 Nuestra Visión</h3>
+						<p>
+							Ser la repostería preferida de la comunidad, reconocida por la 
+							excelencia de nuestros productos, la creatividad en nuestros diseños 
+							y el cariño con el que tratamos a cada cliente.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="process-section">
+			<div class="container">
+				<h2 class="section-title centered">Nuestro Proceso</h2>
+				<p class="section-description centered">
+					Cada producto pasa por un cuidadoso proceso para garantizar la máxima calidad
+				</p>
+				<div class="process-steps">
+					<div class="step">
+						<div class="step-number">1</div>
+						<h4>Consulta Personalizada</h4>
+						<p>Escuchamos tus ideas y necesidades para entender exactamente lo que deseas.</p>
+					</div>
+					<div class="step">
+						<div class="step-number">2</div>
+						<h4>Selección de Ingredientes</h4>
+						<p>Elegimos cuidadosamente los mejores ingredientes frescos y de calidad premium.</p>
+					</div>
+					<div class="step">
+						<div class="step-number">3</div>
+						<h4>Elaboración Artesanal</h4>
+						<p>Preparamos cada producto con técnicas tradicionales y mucha dedicación.</p>
+					</div>
+					<div class="step">
+						<div class="step-number">4</div>
+						<h4>Decoración Creativa</h4>
+						<p>Diseñamos y decoramos con atención al detalle para crear algo único.</p>
+					</div>
+					<div class="step">
+						<div class="step-number">5</div>
+						<h4>Control de Calidad</h4>
+						<p>Verificamos que todo esté perfecto antes de la entrega.</p>
+					</div>
+					<div class="step">
+						<div class="step-number">6</div>
+						<h4>Entrega Puntual</h4>
+						<p>Llevamos tu pedido fresco y en perfectas condiciones, justo a tiempo.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="cta-section">
+			<div class="container">
+				<div class="cta-content">
+					<h2 class="cta-title">¿Quieres ser parte de nuestra historia?</h2>
+					<p class="cta-description">
+						Nos encantaría endulzar tu próxima celebración. 
+						Contáctanos y cuéntanos qué tienes en mente.
+					</p>
+					<a href="/contacto" class="btn btn-white">
+						Contáctanos
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	
+	<Footer />
+	<WhatsAppFloat />
+</Layout>
+
+<style>
+	.page-hero {
+		background: linear-gradient(135deg, #fef3f4 0%, #fff5f7 100%);
+		padding: 5rem 2rem 3rem;
+		text-align: center;
+	}
+	
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	
+	.page-title {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		color: var(--color-text);
+	}
+	
+	.page-description {
+		font-size: 1.25rem;
+		color: var(--color-text-light);
+		max-width: 700px;
+		margin: 0 auto;
+		line-height: 1.8;
+	}
+	
+	.story-section {
+		padding: 5rem 2rem;
+	}
+	
+	.story-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+	}
+	
+	.about-image {
+		border-radius: var(--radius-xl);
+		box-shadow: var(--shadow-xl);
+		width: 100%;
+		height: auto;
+	}
+	
+	.section-title {
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+		color: var(--color-text);
+	}
+	
+	.section-title.centered {
+		text-align: center;
+	}
+	
+	.section-description.centered {
+		text-align: center;
+		max-width: 700px;
+		margin: 0 auto 3rem;
+		font-size: 1.1rem;
+		color: var(--color-text-light);
+	}
+	
+	.story-text p {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: var(--color-text-light);
+		margin-bottom: 1.5rem;
+	}
+	
+	.values-section {
+		padding: 5rem 2rem;
+		background: var(--color-bg-light);
+	}
+	
+	.values-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 3rem;
+	}
+	
+	.value-card {
+		background: white;
+		padding: 2.5rem;
+		border-radius: var(--radius-lg);
+		text-align: center;
+		box-shadow: var(--shadow-md);
+		transition: var(--transition);
+	}
+	
+	.value-card:hover {
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-xl);
+	}
+	
+	.value-icon {
+		font-size: 3.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	.value-card h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: var(--color-text);
+	}
+	
+	.value-card p {
+		color: var(--color-text-light);
+		line-height: 1.6;
+	}
+	
+	.mission-section {
+		padding: 5rem 2rem;
+	}
+	
+	.mission-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		gap: 3rem;
+	}
+	
+	.mission-card {
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+		color: white;
+		padding: 3rem;
+		border-radius: var(--radius-xl);
+		box-shadow: var(--shadow-lg);
+	}
+	
+	.mission-card h3 {
+		font-size: 2rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.mission-card p {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		opacity: 0.95;
+	}
+	
+	.process-section {
+		padding: 5rem 2rem;
+		background: var(--color-bg-light);
+	}
+	
+	.process-steps {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+		margin-top: 3rem;
+	}
+	
+	.step {
+		background: white;
+		padding: 2rem;
+		border-radius: var(--radius-lg);
+		box-shadow: var(--shadow-md);
+		text-align: center;
+		transition: var(--transition);
+	}
+	
+	.step:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-lg);
+	}
+	
+	.step-number {
+		width: 60px;
+		height: 60px;
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+		color: white;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.5rem;
+		font-weight: 700;
+		margin: 0 auto 1.5rem;
+	}
+	
+	.step h4 {
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+		color: var(--color-text);
+	}
+	
+	.step p {
+		color: var(--color-text-light);
+		line-height: 1.6;
+	}
+	
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+		color: white;
+		padding: 5rem 2rem;
+		text-align: center;
+	}
+	
+	.cta-content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	
+	.cta-title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	.cta-description {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		opacity: 0.95;
+		line-height: 1.6;
+	}
+	
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 1rem 2rem;
+		border-radius: var(--radius-md);
+		font-weight: 600;
+		font-size: 1rem;
+		transition: var(--transition);
+		cursor: pointer;
+		border: none;
+	}
+	
+	.btn-white {
+		background: white;
+		color: var(--color-primary);
+		box-shadow: var(--shadow-lg);
+	}
+	
+	.btn-white:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-xl);
+	}
+	
+	@media (max-width: 768px) {
+		.page-hero {
+			padding: 3rem 1rem 2rem;
+		}
+		
+		.page-title {
+			font-size: 2rem;
+		}
+		
+		.page-description {
+			font-size: 1rem;
+		}
+		
+		.story-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+		
+		.section-title {
+			font-size: 1.75rem;
+		}
+		
+		.mission-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.process-steps {
+			grid-template-columns: 1fr;
+		}
+		
+		.cta-title {
+			font-size: 1.75rem;
+		}
+		
+		.cta-description {
+			font-size: 1rem;
+		}
+	}
+</style>
