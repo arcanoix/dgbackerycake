@@ -5,11 +5,10 @@ interface Props {
 	title: string;
 	description: string;
 	image: ImageMetadata;
-	price?: string;
 	category?: string;
 }
 
-const { title, description, image, price, category } = Astro.props;
+const { title, description, image, category } = Astro.props;
 ---
 
 <div class="product-card">
@@ -27,7 +26,6 @@ const { title, description, image, price, category } = Astro.props;
 	<div class="content">
 		<h3 class="title">{title}</h3>
 		<p class="description">{description}</p>
-		{price && <p class="price">{price}</p>}
 		<a href="https://wa.me/584128477968" target="_blank" rel="noopener noreferrer" class="order-button">
 			Ordenar Ahora
 		</a>
@@ -102,14 +100,6 @@ const { title, description, image, price, category } = Astro.props;
 		line-height: 1.6;
 		margin-bottom: 1rem;
 		flex: 1;
-	}
-	
-	.price {
-		font-size: 1.5rem;
-		font-weight: 700;
-		color: var(--color-primary);
-		margin-bottom: 1rem;
-		font-family: var(--font-display);
 	}
 	
 	.order-button {
