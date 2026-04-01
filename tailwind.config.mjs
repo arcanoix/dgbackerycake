@@ -4,62 +4,84 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				// Colores oficiales del logo DGBACKERY&CAKE
+				// L'Artisan Crème Design System Colors
+				surface: {
+					DEFAULT: '#fff8ef',
+					bright: '#fff8ef',
+					container: '#f5edde',
+					'container-low': '#fbf3e4',
+					'container-high': '#efe7d9',
+					'container-highest': '#e9e2d3',
+					'container-lowest': '#ffffff',
+					dim: '#e1d9cb',
+				},
 				primary: {
-					50: '#fff5f0',
-					100: '#ffe8db',
-					200: '#ffd4b8',
-					300: '#ffcc99', // Color durazno/crema del logo
-					400: '#ffb366',
-					500: '#ff9933',
-					600: '#ff8000',
-					700: '#cc6600',
-					800: '#994d00',
-					900: '#663300',
-					DEFAULT: '#ffcc99',
+					DEFAULT: '#b02c32',
+					container: '#ffc8c5',
 				},
 				secondary: {
-					50: '#fff0f0',
-					100: '#ffe0e0',
-					200: '#ffc2c2',
-					300: '#ffa3a3',
-					400: '#ff8585',
-					500: '#ff6666', // Rosa coral del logo
-					600: '#ff3333',
-					700: '#cc0000',
-					800: '#990000',
-					900: '#660000',
-					DEFAULT: '#ff6666',
+					DEFAULT: '#7c572e',
+					container: '#fecb98',
 				},
-				accent: {
-					50: '#f5f5f5',
-					100: '#e6e6e6',
-					200: '#cccccc',
-					300: '#b3b3b3',
-					400: '#999999',
-					500: '#808080',
-					600: '#666666',
-					700: '#4d4d4d',
-					800: '#333333',
-					900: '#1a1a1a',
-					DEFAULT: '#000000', // Negro del logo
+				tertiary: {
+					DEFAULT: '#7c5730',
+					container: '#fecc9c',
+				},
+				outline: {
+					DEFAULT: '#82756a',
+					variant: '#d4c4b7',
+				},
+				'on-surface': {
+					DEFAULT: '#1e1b13',
+					variant: '#50453b',
+				},
+				// Brand colors (keeping original palette)
+				brand: {
+					peach: '#ffcc99',
+					coral: '#ff6666',
+					cream: '#fff8ef',
 				},
 			},
 			fontFamily: {
-				display: ['Playfair Display', 'serif'],
-				body: ['Inter', 'system-ui', 'sans-serif'],
+				serif: ['Noto Serif', 'Georgia', 'serif'],
+				sans: ['Manrope', 'system-ui', 'sans-serif'],
+				// Legacy support
+				display: ['Noto Serif', 'Georgia', 'serif'],
+				body: ['Manrope', 'system-ui', 'sans-serif'],
+			},
+			spacing: {
+				// Editorial spacing scale
+				'18': '4.5rem',
+				'22': '5.5rem',
+				'26': '6.5rem',
+				'30': '7.5rem',
 			},
 			animation: {
-				'float': 'float 3s ease-in-out infinite',
-				'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'fade-in': 'fadeIn 0.5s ease-out',
+				'slide-up': 'slideUp 0.6s ease-out',
 			},
 			keyframes: {
-				float: {
-					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-20px)' },
+				fadeIn: {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' },
+				},
+				slideUp: {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' },
 				},
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		function({ addComponents }) {
+			addComponents({
+				'.category-label': {
+					fontSize: '0.75rem',
+					fontWeight: '600',
+					letterSpacing: '0.15em',
+					textTransform: 'uppercase',
+				},
+			});
+		},
+	],
 }

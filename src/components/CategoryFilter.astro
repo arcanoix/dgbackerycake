@@ -1,0 +1,58 @@
+---
+interface Props {
+  categories: { id: string; label: string; count: number }[];
+}
+
+const { categories } = Astro.props;
+---
+
+<div class="flex items-center gap-2 py-4 overflow-x-auto no-scrollbar">
+  <a
+    href="#tortas"
+    class="category-pill active whitespace-nowrap px-5 py-2.5 text-sm font-medium transition-all duration-300"
+  >
+    Todas
+  </a>
+  {categories.map((category) => (
+    <a
+      href={`#${category.id}`}
+      class="category-pill whitespace-nowrap px-5 py-2.5 text-sm font-medium transition-all duration-300 flex items-center gap-2"
+    >
+      {category.label}
+      <span class="text-xs text-[#82756a]">({category.count})</span>
+    </a>
+  ))}
+</div>
+
+<style>
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-pill {
+    border: 1px solid transparent;
+    color: #50453b;
+    border-radius: 0.125rem;
+  }
+
+  .category-pill:hover {
+    background: rgba(130, 117, 106, 0.1);
+    border-color: #82756a;
+    color: #1e1b13;
+  }
+
+  .category-pill.active,
+  .category-pill[href="#tortas"]:hover {
+    background: #b02c32;
+    color: white;
+    border-color: #b02c32;
+  }
+
+  .category-pill.active span {
+    color: rgba(255, 255, 255, 0.7);
+  }
+</style>

@@ -1,0 +1,22 @@
+---
+interface Props {
+	icon: 'cake' | 'bread' | 'quality' | 'delivery';
+	title: string;
+	description: string;
+}
+
+const { icon, title, description } = Astro.props;
+
+const icons = {
+	cake: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16h16"/><path d="M12 4v9"/><path d="M8 9l4-5 4 5"/></svg>`,
+	bread: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h14v-3.5c2-1.5 2-2.7 2-4.5 0-5.3-7.5-6.5-11-5-.2-.6-1.5-2-3-2z"/></svg>`,
+	quality: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+	delivery: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M12 15v-6"/></svg>`
+};
+---
+
+<div class="group p-6 lg:p-8 bg-[#fff8ef] border border-[#d4c4b7]/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+	<div class="mb-5 text-[#b02c32] transition-transform duration-500 group-hover:scale-110" set:html={icons[icon]} />
+	<h3 class="font-serif text-xl font-semibold text-[#1e1b13] mb-3">{title}</h3>
+	<p class="text-[#50453b] leading-relaxed text-sm">{description}</p>
+</div>

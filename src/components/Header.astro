@@ -1,80 +1,106 @@
 ---
 const currentPath = Astro.url.pathname;
+
+const navLinks = [
+	{ href: '/', label: 'Inicio' },
+	{ href: '/productos', label: 'Productos' },
+	{ href: '/galeria', label: 'Galería' },
+	{ href: '/nosotros', label: 'Nosotros' },
+	{ href: '/contacto', label: 'Contacto' },
+];
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm">
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="flex items-center justify-between h-20">
+<header class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-[#d4c4b7]/20">
+	<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+		<div class="flex items-center justify-between h-20 lg:h-24">
+			<!-- Logo -->
 			<a href="/" class="flex items-center group">
-				<span class="text-2xl sm:text-3xl font-display font-bold text-gray-900 tracking-tight">
-					DGBACKERY<span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">&CAKE</span>
+				<span class="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-[#1e1b13]">
+					DGBACKERY
+				</span>
+				<span class="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-[#b02c32]">
+					&CAKE
 				</span>
 			</a>
 			
-			<nav class="hidden lg:flex items-center gap-8">
-				<a href="/" class={`relative text-base font-medium transition-colors ${currentPath === '/' ? 'text-secondary' : 'text-gray-600 hover:text-secondary'} group`}>
-					Inicio
-					<span class={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all ${currentPath === '/' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-				</a>
-				<a href="/productos" class={`relative text-base font-medium transition-colors ${currentPath === '/productos' ? 'text-secondary' : 'text-gray-600 hover:text-secondary'} group`}>
-					Productos
-					<span class={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all ${currentPath === '/productos' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-				</a>
-				<a href="/galeria" class={`relative text-base font-medium transition-colors ${currentPath === '/galeria' ? 'text-secondary' : 'text-gray-600 hover:text-secondary'} group`}>
-					Galería
-					<span class={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all ${currentPath === '/galeria' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-				</a>
-				<a href="/nosotros" class={`relative text-base font-medium transition-colors ${currentPath === '/nosotros' ? 'text-secondary' : 'text-gray-600 hover:text-secondary'} group`}>
-					Nosotros
-					<span class={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all ${currentPath === '/nosotros' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-				</a>
-				<a href="/contacto" class={`relative text-base font-medium transition-colors ${currentPath === '/contacto' ? 'text-secondary' : 'text-gray-600 hover:text-secondary'} group`}>
-					Contacto
-					<span class={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all ${currentPath === '/contacto' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-				</a>
+			<!-- Desktop Navigation -->
+			<nav class="hidden lg:flex items-center gap-10">
+				{navLinks.map((link) => (
+					<a 
+						href={link.href} 
+						class={`relative font-medium text-sm tracking-wide transition-all duration-300 group ${
+							currentPath === link.href 
+								? 'text-[#b02c32]' 
+								: 'text-[#50453b] hover:text-[#1e1b13]'
+						}`}
+					>
+						{link.label}
+						<span class={`absolute -bottom-1 left-0 h-[2px] bg-[#b02c32] transition-all duration-300 ${
+							currentPath === link.href ? 'w-full' : 'w-0 group-hover:w-full'
+						}`}></span>
+					</a>
+				))}
 			</nav>
 			
-			<a href="https://wa.me/584128477968" target="_blank" rel="noopener noreferrer" 
-			   class="hidden lg:inline-flex items-center gap-2 px-6 py-3 text-white font-semibold bg-gradient-to-r from-secondary to-primary rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
-				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-					<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-				</svg>
-				Hacer Pedido
-			</a>
+			<!-- CTA Button -->
+			<div class="hidden lg:block">
+				<a 
+					href="https://wa.me/584128477968" 
+					target="_blank" 
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-[#b02c32] rounded-sm transition-all duration-300 hover:bg-[#8e111d] hover:shadow-lg hover:-translate-y-0.5"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+					</svg>
+					Hacer Pedido
+				</a>
+			</div>
 			
-			<button class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu" id="mobile-menu-toggle">
-				<span class="w-6 h-0.5 bg-gray-900 transition-all"></span>
-				<span class="w-6 h-0.5 bg-gray-900 transition-all"></span>
-				<span class="w-6 h-0.5 bg-gray-900 transition-all"></span>
+			<!-- Mobile Menu Button -->
+			<button 
+				class="lg:hidden p-2 -mr-2" 
+				aria-label="Toggle menu" 
+				id="mobile-menu-toggle"
+				aria-expanded="false"
+			>
+				<div class="w-6 h-5 flex flex-col justify-between">
+					<span class="w-full h-0.5 bg-[#1e1b13] transition-all origin-left"></span>
+					<span class="w-full h-0.5 bg-[#1e1b13] transition-all"></span>
+					<span class="w-full h-0.5 bg-[#1e1b13] transition-all origin-left"></span>
+				</div>
 			</button>
 		</div>
 	</div>
 	
 	<!-- Mobile Menu -->
-	<div class="lg:hidden hidden" id="mobile-menu">
-		<div class="px-4 pt-2 pb-6 space-y-2 bg-white border-t border-gray-200">
-			<a href="/" class={`block px-4 py-3 rounded-lg font-medium transition-colors ${currentPath === '/' ? 'bg-primary-50 text-secondary' : 'text-gray-600 hover:bg-gray-50'}`}>
-				Inicio
-			</a>
-			<a href="/productos" class={`block px-4 py-3 rounded-lg font-medium transition-colors ${currentPath === '/productos' ? 'bg-primary-50 text-secondary' : 'text-gray-600 hover:bg-gray-50'}`}>
-				Productos
-			</a>
-			<a href="/galeria" class={`block px-4 py-3 rounded-lg font-medium transition-colors ${currentPath === '/galeria' ? 'bg-primary-50 text-secondary' : 'text-gray-600 hover:bg-gray-50'}`}>
-				Galería
-			</a>
-			<a href="/nosotros" class={`block px-4 py-3 rounded-lg font-medium transition-colors ${currentPath === '/nosotros' ? 'bg-primary-50 text-secondary' : 'text-gray-600 hover:bg-gray-50'}`}>
-				Nosotros
-			</a>
-			<a href="/contacto" class={`block px-4 py-3 rounded-lg font-medium transition-colors ${currentPath === '/contacto' ? 'bg-primary-50 text-secondary' : 'text-gray-600 hover:bg-gray-50'}`}>
-				Contacto
-			</a>
-			<a href="https://wa.me/584128477968" target="_blank" rel="noopener noreferrer" 
-			   class="flex items-center justify-center gap-2 px-4 py-3 mt-4 text-white font-semibold bg-gradient-to-r from-secondary to-primary rounded-lg shadow-lg">
-				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-					<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-				</svg>
-				Hacer Pedido
-			</a>
+	<div class="lg:hidden hidden absolute top-full left-0 right-0 bg-[#fff8ef] border-b border-[#d4c4b7]/30 shadow-lg" id="mobile-menu">
+		<div class="max-w-7xl mx-auto px-6 py-6 space-y-1">
+			{navLinks.map((link) => (
+				<a 
+					href={link.href}
+					class={`block px-4 py-3 rounded-sm font-medium transition-colors ${
+						currentPath === link.href 
+							? 'bg-[#ffc8c5]/30 text-[#b02c32]' 
+							: 'text-[#50453b] hover:bg-[#f5edde]'
+					}`}
+				>
+					{link.label}
+				</a>
+			))}
+			<div class="pt-4 mt-4 border-t border-[#d4c4b7]/30">
+				<a 
+					href="https://wa.me/584128477968" 
+					target="_blank" 
+					rel="noopener noreferrer"
+					class="flex items-center justify-center gap-2 w-full px-4 py-3 text-white font-semibold bg-[#b02c32] rounded-sm"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+					</svg>
+					Hacer Pedido
+				</a>
+			</div>
 		</div>
 	</div>
 </header>
@@ -82,10 +108,27 @@ const currentPath = Astro.url.pathname;
 <script>
 	const toggle = document.getElementById('mobile-menu-toggle');
 	const menu = document.getElementById('mobile-menu');
+	const spans = toggle?.querySelectorAll('span');
 	
-	if (toggle && menu) {
+	if (toggle && menu && spans) {
 		toggle.addEventListener('click', () => {
-			menu.classList.toggle('hidden');
+			const isOpen = menu.classList.contains('hidden');
+			
+			if (isOpen) {
+				menu.classList.remove('hidden');
+				toggle.setAttribute('aria-expanded', 'true');
+				// Animate to X
+				spans[0].style.transform = 'rotate(45deg) translateY(3px)';
+				spans[1].style.opacity = '0';
+				spans[2].style.transform = 'rotate(-45deg) translateY(-3px)';
+			} else {
+				menu.classList.add('hidden');
+				toggle.setAttribute('aria-expanded', 'false');
+				// Reset animation
+				spans[0].style.transform = '';
+				spans[1].style.opacity = '';
+				spans[2].style.transform = '';
+			}
 		});
 	}
 </script>

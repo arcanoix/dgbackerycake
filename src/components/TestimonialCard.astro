@@ -1,77 +1,46 @@
 ---
 interface Props {
-	name: string;
-	text: string;
-	rating?: number;
-	image?: string;
+  name: string;
+  text: string;
+  rating?: number;
+  service?: string;
 }
 
-const { name, text, rating = 5, image } = Astro.props;
+const { name, text, rating = 5, service } = Astro.props;
 ---
 
-<div class="testimonial-card">
-	<div class="stars">
-		{Array.from({ length: rating }).map(() => (
-			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-				<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-			</svg>
-		))}
-	</div>
-	<p class="text">"{text}"</p>
-	<div class="author">
-		{image && <img src={image} alt={name} class="avatar" />}
-		<p class="name">{name}</p>
-	</div>
+<div class="bg-[#fff8ef] p-6 lg:p-8 border border-[#d4c4b7]/20">
+  <!-- Quote Icon -->
+  <div class="mb-4 text-[#b02c32]/30">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+    </svg>
+  </div>
+  
+  <!-- Review Text -->
+  <p class="text-[#50453b] leading-relaxed mb-6 italic">"{text}"</p>
+  
+  <!-- Rating -->
+  <div class="flex gap-1 mb-4">
+    {Array.from({ length: rating }).map(() => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#b02c32">
+        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+      </svg>
+    ))}
+  </div>
+  
+  <!-- Author Info -->
+  <div class="pt-4 border-t border-[#d4c4b7]/30">
+    <div class="flex items-center gap-4">
+      <div class="w-12 h-12 rounded-full bg-[#ffc8c5]/50 flex items-center justify-center text-[#b02c32] font-serif font-semibold text-lg">
+        {name.charAt(0)}
+      </div>
+      <div>
+        <h4 class="font-serif font-semibold text-[#1e1b13]">{name}</h4>
+        {service && (
+          <span class="text-sm text-[#50453b]">{service}</span>
+        )}
+      </div>
+    </div>
+  </div>
 </div>
-
-<style>
-	.testimonial-card {
-		background: white;
-		padding: 2rem;
-		border-radius: var(--radius-lg);
-		box-shadow: var(--shadow-md);
-		transition: var(--transition);
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-	
-	.testimonial-card:hover {
-		box-shadow: var(--shadow-lg);
-		transform: translateY(-4px);
-	}
-	
-	.stars {
-		display: flex;
-		gap: 0.25rem;
-		color: #fbbf24;
-		margin-bottom: 1rem;
-	}
-	
-	.text {
-		font-size: 1rem;
-		line-height: 1.6;
-		color: var(--color-text-light);
-		font-style: italic;
-		flex: 1;
-		margin-bottom: 1.5rem;
-	}
-	
-	.author {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-	}
-	
-	.avatar {
-		width: 48px;
-		height: 48px;
-		border-radius: 50%;
-		object-fit: cover;
-	}
-	
-	.name {
-		font-weight: 600;
-		color: var(--color-text);
-	}
-</style>
