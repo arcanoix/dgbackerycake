@@ -12,7 +12,7 @@ const { categories } = Astro.props;
       href={`#${category.id}`}
       data-category-pill={category.id}
       class:list={[
-        "category-pill whitespace-nowrap px-5 py-2.5 text-sm font-medium transition-all duration-300 flex items-center gap-2",
+        "category-pill whitespace-nowrap px-5 py-2.5 text-sm font-medium transition-colors duration-300 flex items-center gap-2",
         index === 0 && "active",
       ]}
     >
@@ -34,7 +34,7 @@ const { categories } = Astro.props;
   .category-pill {
     border: 1px solid transparent;
     color: #50453b;
-    border-radius: 0.125rem;
+    border-radius: 0.75rem;
   }
 
   .category-pill:hover {
@@ -44,9 +44,9 @@ const { categories } = Astro.props;
   }
 
   .category-pill.active {
-    background: #b02c32;
+    background: #ff6666;
     color: white;
-    border-color: #b02c32;
+    border-color: #ff6666;
   }
 
   .category-pill.active span {

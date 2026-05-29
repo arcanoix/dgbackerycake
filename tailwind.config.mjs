@@ -16,24 +16,24 @@ export default {
 					dim: '#e1d9cb',
 				},
 				primary: {
-					DEFAULT: '#b02c32',
+					DEFAULT: '#ff6666',
 					container: '#ffc8c5',
 				},
 				secondary: {
-					DEFAULT: '#7c572e',
-					container: '#fecb98',
+					DEFAULT: '#ffcc99',
+					container: '#ffe8db',
 				},
 				tertiary: {
-					DEFAULT: '#7c5730',
-					container: '#fecc9c',
+					DEFAULT: '#d9774a',
+					container: '#ffdfcc',
 				},
 				outline: {
-					DEFAULT: '#82756a',
-					variant: '#d4c4b7',
+					DEFAULT: '#a18f7e',
+					variant: '#e8ddd4',
 				},
 				'on-surface': {
 					DEFAULT: '#1e1b13',
-					variant: '#50453b',
+					variant: '#6b5d4f',
 				},
 				// Brand colors (keeping original palette)
 				brand: {

@@ -14,15 +14,15 @@ import heroCake from '../assets/image/hero-cake.png';
 			<!-- Left Content: Editorial & Bold -->
 			<div class="relative z-10 lg:pr-12 pt-5 text-center lg:text-left">
 				<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/40 backdrop-blur-md border border-white/40 mb-8 mx-auto lg:mx-0">
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#b02c32">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#ff6666" aria-hidden="true">
 						<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
 					</svg>
-					<span class="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#7c572e]">Creamos Momentos Especiales</span>
+					<span class="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#ff6666]">Creamos Momentos Especiales</span>
 				</div>
 				
 				<h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] lg:leading-[1.05] text-[#1e1b13] mb-6 lg:mb-8">
 					Tortas Únicas,<br/>
-					<span class="text-[#b02c32]">Hechas</span> con<br/>
+					<span class="text-[#ff6666]">Hechas</span> con<br/>
 					Dedicación
 				</h1>
 
@@ -31,10 +31,10 @@ import heroCake from '../assets/image/hero-cake.png';
 				</p>
 
 				<div class="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center lg:justify-start">
-					<a href="/productos" class="px-8 sm:px-10 py-4 sm:py-5 bg-[#1e1b13] text-white rounded-full font-bold text-base sm:text-lg hover:scale-105 transition-all shadow-xl hover:shadow-black/20">
+					<a href="/productos" class="px-8 sm:px-10 py-4 sm:py-5 bg-[#1e1b13] text-white rounded-full font-bold text-base sm:text-lg hover:scale-105 transition-transform shadow-xl hover:shadow-black/20">
 						Pedir Ahora
 					</a>
-					<a href="/galeria" class="px-8 sm:px-10 py-4 sm:py-5 bg-white/40 backdrop-blur-md border border-[#1e1b13]/10 text-[#1e1b13] rounded-full font-bold text-base sm:text-lg hover:bg-white/60 transition-all">
+					<a href="/galeria" class="px-8 sm:px-10 py-4 sm:py-5 bg-white/40 backdrop-blur-md border border-[#1e1b13]/10 text-[#1e1b13] rounded-full font-bold text-base sm:text-lg hover:bg-white/60 transition-colors">
 						Ver Galería
 					</a>
 				</div>
@@ -83,12 +83,19 @@ import heroCake from '../assets/image/hero-cake.png';
 	</div>
 </section>
 
-<style>
+	<style>
 	@keyframes float {
 		0%, 100% { transform: translateY(0px); }
 		50% { transform: translateY(-20px); }
 	}
 	.animate-float {
 		animation: float 6s ease-in-out infinite;
+	}
+	
+	@media (prefers-reduced-motion: reduce) {
+		.animate-float,
+		.animate-pulse {
+			animation: none !important;
+		}
 	}
 </style>
